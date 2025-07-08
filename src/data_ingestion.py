@@ -7,6 +7,8 @@ df = pd.read_csv('https://raw.githubusercontent.com/araj2/customer-database/refs
 # If you want to keep only columns from the 4th onward, assign it back to df:
 df = df.iloc[:, 3:]
 
-df = df[df['Length of Membership']>3]
+df = df[df['Length of Membership']>1]
+
+df.drop(columns=['Avg. Session Length'],inplace=True)
 
 df.to_csv(os.path.join('data','customer.csv'))
